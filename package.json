@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:staging": "tsc && vite build --mode staging",
+    "build:dev": "tsc && vite build --mode dev",
     "preview": "vite preview",
     "test": "jest"
   },

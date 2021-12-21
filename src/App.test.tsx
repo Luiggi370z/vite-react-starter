@@ -13,6 +13,6 @@ test('Render main app page correctly', async () => {
   user.click(buttonCount);
   user.click(buttonCount);
 
-  expect(buttonCount.innerHTML).toBe('count is: 2');
+  expect(buttonCount.innerHTML).toBe('count is: 3');
   expect(await screen.queryByText(/The count is now:/)).toBeInTheDocument();
 });

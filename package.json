@@ -11,7 +11,8 @@
     "build:staging": "tsc && vite build --mode staging",
     "build:dev": "tsc && vite build --mode dev",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -39,7 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
     "postcss": "^8.4.5",

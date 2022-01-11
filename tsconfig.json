@@ -20,6 +20,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": [
+      "vite-plugin-svgr/client",
+      "@types/jest",
+      "@testing-library/jest-dom"
+    ],
     "paths": {
       "@/*": [
         "./*"

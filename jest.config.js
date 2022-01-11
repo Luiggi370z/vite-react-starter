@@ -4,14 +4,30 @@ module.exports = {
   testEnvironment: 'jsdom',
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'], // querying the DOM
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  testMatch: ['**/*.(test|spec).(ts|tsx|js|jsx)'],
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.setup.ts', // querying the DOM
+    // '<rootDir>/test/__mocks__/matchMediaMock.js', // to mock the matchMedia API
+  ],
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   moduleDirectories: ['node_modules', './src'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  // transformIgnorePatterns: [
+  //   'node_modules/(?!import-fresh).+(js|jsx)$',
+  //   'node_modules/(?!import-fresh/.*)',
+  //   'node_modules/(?!(import-fresh/.*)/)',
+  // ],
   moduleNameMapper: {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js', // for imgs/assets
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // for styles
+    '^@/(.*)$': '<rootDir>/$1', // for Path aliases
+  },
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
   },
 };

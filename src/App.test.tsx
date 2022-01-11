@@ -13,6 +13,16 @@ jest.mock('utils', () => ({
   },
 }));
 
+// TODO: Instead of using BABEL, modularize all env variables to mock them in tests, due a issue with ts-jest and ESM modules
+// https://github.com/kulshekhar/ts-jest/issues/1174
+
+// file: src/utils/env.ts
+jest.mock('utils', () => ({
+  envVariables: {
+    MY_VAR: 'my value',
+  },
+}));
+
 test('Render main app page correctly', async () => {
   render(<App />);
   // For lazy loading import waitFor. Example:

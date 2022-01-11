@@ -15,11 +15,6 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  // transformIgnorePatterns: [
-  //   'node_modules/(?!import-fresh).+(js|jsx)$',
-  //   'node_modules/(?!import-fresh/.*)',
-  //   'node_modules/(?!(import-fresh/.*)/)',
-  // ],
   moduleNameMapper: {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js', // for imgs/assets
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // for styles
